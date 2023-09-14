@@ -1,0 +1,8 @@
+SELECT
+    CASE
+        WHEN P IS NULL THEN CONCAT(N, " Root")
+        WHEN N IN(SELECT P FROM BST) IS NULL THEN CONCAT(N, " Leaf")
+        ELSE CONCAT(N, " Inner")
+    END
+FROM BST
+ORDER BY N;
